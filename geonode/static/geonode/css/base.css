@@ -5011,6 +5011,8 @@ a.badge:focus {
   margin-left: 3px;
 }
 .jumbotron {
+  background: url(http://www.planerp.ec/wp-content/uploads/2020/01/planerp_smartcity_header_inicio.jpg) no-repeat !important;
+  background-size: cover !important;
   padding-top: 2em;
   padding-bottom: 2em;
   margin-bottom: 2em;
@@ -7149,7 +7151,7 @@ article.tab-pane {
   margin-left: 10px;
 }
 .navbar-brand {
-  background: url("../img/logo.png");
+  background: url("../img/logogris2.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
