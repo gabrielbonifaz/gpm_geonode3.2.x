@@ -53,8 +53,8 @@ RUN crontab /etc/cron.d/monitoring-cron
 RUN touch /var/log/cron.log
 RUN service cron start
 
-COPY wait-for-databases.sh /usr/bin/wait-for-databases
-RUN chmod +x /usr/bin/wait-for-databases
+#COPY wait-for-databases.sh /usr/bin/wait-for-databases
+#RUN chmod +x /usr/bin/wait-for-databases
 RUN chmod +x /usr/src/geonode/tasks.py \
     && chmod +x /usr/src/geonode/entrypoint.sh
 
