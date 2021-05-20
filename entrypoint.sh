@@ -30,8 +30,8 @@ echo MONITORING_HOST_NAME=$MONITORING_HOST_NAME
 echo MONITORING_SERVICE_NAME=$MONITORING_SERVICE_NAME
 echo MONITORING_DATA_TTL=$MONITORING_DATA_TTL
 
-/usr/local/bin/invoke waitfordbs > /usr/src/geonode/invoke.log 2>&1
-echo "waitfordbs task done"
+#/usr/local/bin/invoke waitfordbs > /usr/src/geonode/invoke.log 2>&1
+#echo "waitfordbs task done"
 
 echo "running migrations"
 /usr/local/bin/invoke migrations > /usr/src/geonode/invoke.log 2>&1
