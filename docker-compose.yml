@@ -111,20 +111,20 @@ services:
       - geoserver-data-dir:/geoserver_data/data
     restart: on-failure
 
- # # PostGIS database.
- # db:
- #   # use geonode official postgis 13 image
- #   image: geonode/postgis:13
- #   container_name: db4${COMPOSE_PROJECT_NAME}
- #   env_file:
- #     - ./scripts/docker/env/${DOCKER_ENV}/db.env
- #   volumes:
- #     - dbdata:/var/lib/postgresql/data
- #     - dbbackups:/pg_backups
- #   restart: on-failure
+ # PostGIS database.
+  db:
+    # use geonode official postgis 13 image
+    image: geonode/postgis:13
+    container_name: db4${COMPOSE_PROJECT_NAME}
+    env_file:
+      - ./scripts/docker/env/${DOCKER_ENV}/db.env
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+      - dbbackups:/pg_backups
+    restart: on-failure
     # uncomment to enable remote connections to postgres
-    #ports:
-    #  - "5432:5432"
+    ports:
+      - "5432:5432"
 
   # Vanilla RabbitMQ service. This is needed by celery
   rabbitmq:
