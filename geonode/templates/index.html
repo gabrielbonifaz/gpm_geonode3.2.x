@@ -19,17 +19,17 @@
 {% if custom_theme.welcome_theme == 'JUMBOTRON_BG' or not slides %}
 <div class="jumbotron">
   <div class="container gn-container">
-      {% with jumbotron_welcome_title=custom_theme.jumbotron_welcome_title|default:"Welcome"|template_trans %}
+      {% with jumbotron_welcome_title=custom_theme.jumbotron_welcome_title|default:"e-GOB"|template_trans %}
       <h1>{% trans jumbotron_welcome_title %}</h1>
       {% endwith %}
       <p></p>
-      {% with jumbotron_welcome_content=custom_theme.jumbotron_welcome_content|default:"GeoNode is an open source platform for sharing geospatial data and maps."|template_trans %}
+      {% with jumbotron_welcome_content=custom_theme.jumbotron_welcome_content|default:"Módulo de Análisis Geoespacial."|template_trans %}
       <p>{% trans jumbotron_welcome_content %}</p>
       {% endwith %}
       {% if not custom_theme.jumbotron_cta_hide %}
-      <p><a class="btn btn-default btn-lg" target="_blank"
+      <!--p><a class="btn btn-default btn-lg" target="_blank"
           href="{{custom_theme.jumbotron_cta_link|default:"https://docs.geonode.org/en/master/usage/index.html"}}"
-          role="button">{{custom_theme.jumbotron_cta_text|default:_("Get Started &raquo;")}}</a></p>
+          role="button">{{custom_theme.jumbotron_cta_text|default:_("Get Started &raquo;")}}</a></p-->
       {% endif %}
   </div>
 </div>
@@ -46,7 +46,7 @@
 				{% endfor %}
 			 </ol>
 			 {% endif %}
-       {% with jumbotron_welcome_title=custom_theme.jumbotron_welcome_title|default:"Welcome"|template_trans %}
+       {% with jumbotron_welcome_title=custom_theme.jumbotron_welcome_title|default:"e-GOB"|template_trans %}
        <h1 class="carousel-header">{% trans jumbotron_welcome_title %}</h1>
        {% endwith %}
 			 <!-- Wrapper for slides -->
@@ -87,36 +87,27 @@
 
   {% block mainbody %}
 
-      {% block bigsearch %}
-      {% if block.super %}
-      {{ block.super }}
-      {% else %}
-      <div class="big-search">
-      	<div class="container">
-      		<h1>{% trans "Search for Data." %}</h1>
-      		<div class="search">
-      			<form id="main_search" action="{% url "search" %}" >
-      				<span class="fa fa-search fa-3x"></span>
-      				{% if HAYSTACK_SEARCH %}
-      				<input id="main_search_input" type="text" placeholder="{% trans 'Search' %}" class="form-control" name="q" autocomplete="off">
-                    <input type="hidden" name="abstract__icontains" id="main_search_abstract_input" placeholder="{% trans 'Search' %}" >
-                    <input type="hidden" name="purpose__icontains" id="main_search_purpose_input" placeholder="{% trans 'Search' %}" >
-                    <input type="hidden" name="f_method" id="main_filtering_type" value="or" >
-      				{% else %}
-      				<input id="main_search_input" type="text" placeholder="{% trans 'Search' %}" class="form-control" autocomplete="off" name="title__icontains">
-                    <input type="hidden" name="abstract__icontains" id="main_search_abstract_input">
-                    <input type="hidden" name="purpose__icontains" id="main_search_purpose_input">
-                    <input type="hidden" name="f_method" id="main_filtering_type" value="or" >
-      				{% endif %}
-      			</form>
-      		</div>
-      		<p><a class="btn btn-default btn-lg" href="{% url "search" %}">{% trans "Advanced Search" %}</a></p>
-      	</div>
+	  {% block datasets %}
+    <section id="datasets">
+      {% get_visibile_resources request.user %}
+      <div ng-app="featured" ng-if="featured.length > 0" ng-cloak class="row">
+          <div class="container text-center">
+            <h2>{% trans "Featured Datasets" %}</h2>
+            <div class="row">
+                {% verbatim %}
+                <div ng-repeat="item in featured" class="col-xs-6 col-sm-6 col-md-3">
+                  <a href="{{ item.detail_url }}"><img ng-src="{{ item.thumbnail_url }}" style="width: 100%" /></a>
+                  <h4>{{ item.title | limitTo: 20 }}{{item.title.length > 20 ? '...' : ''}}</h4>
+                </div>
+                {% endverbatim %}
+            </div>
+          </div>
       </div>
-      {% endif %}
-      {% endblock bigsearch %}
-
-	  {% block showcase %}
+      </div>
+    </section>
+    {% endblock datasets %}
+	
+	{% block showcase %}
       <section id="showcase">
         <div class="row">
           <div class="container text-center">
@@ -165,26 +156,35 @@
         </div>
       </section>
 	  {% endblock showcase %}
-
-	  {% block datasets %}
-    <section id="datasets">
-      {% get_visibile_resources request.user %}
-      <div ng-app="featured" ng-if="featured.length > 0" ng-cloak class="row">
-          <div class="container text-center">
-            <h2>{% trans "Featured Datasets" %}</h2>
-            <div class="row">
-                {% verbatim %}
-                <div ng-repeat="item in featured" class="col-xs-6 col-sm-6 col-md-3">
-                  <a href="{{ item.detail_url }}"><img ng-src="{{ item.thumbnail_url }}" style="width: 100%" /></a>
-                  <h4>{{ item.title | limitTo: 20 }}{{item.title.length > 20 ? '...' : ''}}</h4>
-                </div>
-                {% endverbatim %}
-            </div>
-          </div>
+	
+	{% block bigsearch %}
+      {% if block.super %}
+      {{ block.super }}
+      {% else %}
+      <div class="big-search">
+      	<div class="container">
+      		<h1>{% trans "Search for Data." %}</h1>
+      		<div class="search">
+      			<form id="main_search" action="{% url "search" %}" >
+      				<span class="fa fa-search fa-3x"></span>
+      				{% if HAYSTACK_SEARCH %}
+      				<input id="main_search_input" type="text" placeholder="{% trans 'Search' %}" class="form-control" name="q" autocomplete="off">
+                    <input type="hidden" name="abstract__icontains" id="main_search_abstract_input" placeholder="{% trans 'Search' %}" >
+                    <input type="hidden" name="purpose__icontains" id="main_search_purpose_input" placeholder="{% trans 'Search' %}" >
+                    <input type="hidden" name="f_method" id="main_filtering_type" value="or" >
+      				{% else %}
+      				<input id="main_search_input" type="text" placeholder="{% trans 'Search' %}" class="form-control" autocomplete="off" name="title__icontains">
+                    <input type="hidden" name="abstract__icontains" id="main_search_abstract_input">
+                    <input type="hidden" name="purpose__icontains" id="main_search_purpose_input">
+                    <input type="hidden" name="f_method" id="main_filtering_type" value="or" >
+      				{% endif %}
+      			</form>
+      		</div>
+      		<p><a class="btn btn-default btn-lg" href="{% url "search" %}">{% trans "Advanced Search" %}</a></p>
+      	</div>
       </div>
-      </div>
-    </section>
-    {% endblock datasets %}
+      {% endif %}
+      {% endblock bigsearch %}
 
       {% block partners %}
         {% if custom_theme.partners.all %}
