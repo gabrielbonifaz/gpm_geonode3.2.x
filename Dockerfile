@@ -73,6 +73,10 @@ RUN cd /usr/src/geonode-contribs/geonode-logstash; pip install --upgrade  -e . \
 RUN pip install --upgrade --no-cache-dir  --src /usr/src -r requirements.txt
 RUN pip install --upgrade  -e .
 
+# Install "python-cas"
+RUN cd /usr/src; git clone https://github.com/gabrielbonifaz/python-cas.git -b master
+RUN cd /usr/src/python-cas; pip install -e .
+
 # Export ports
 EXPOSE 8000
 
