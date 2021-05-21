@@ -520,6 +520,9 @@ INSTALLED_APPS = (
 
     # GeoNode
     'geonode',
+    
+    # CAS
+    'django_cas_ng',
 )
 
 INSTALLED_APPS += ('markdownify',)
@@ -751,6 +754,8 @@ MIDDLEWARE = (
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django_cas_ng.middleware.CASMiddleware', #cas
+
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'oauth2_provider.middleware.OAuth2TokenMiddleware',
