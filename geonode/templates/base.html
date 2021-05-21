@@ -264,7 +264,7 @@
     <!-- RTL styles -->
     {% get_current_language_bidi as LANGUAGE_BIDI %}
     {% if LANGUAGE_BIDI %}
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.3.4/css/bootstrap-rtl.min.css">
+        <link rel="stylesheet" href="//cdn.rawgit.com/morteza/bootstrap-rtl/v3.3.4/dist/css/bootstrap-rtl.min.css">
         {% if DEBUG_STATIC %}
           <link rel="stylesheet" type="text/css" href="{% static "geonode/css/geonode-rtl.css" %}">
         {% else %}
@@ -545,8 +545,8 @@
           {% endif %}
           {% endblock contactus %}
           <ul class="list-unstyled">
-            <li>{% trans "Powered by" %} <a href="http://geonode.org">{% trans "GeoNode" %}</a>{% if user.is_staff %} <em>{% trans "version" %} {{ VERSION }}</em>{% endif %}</li>
-            <li><a href="{% url "developer" %}">{% trans "Developers" %}</a> | <a href="{% url "about" %}">{% trans "About" %}</a><li>
+            <li>{% trans "Powered by" %} <!--a href="http://geonode.org"-->{% trans "e-GOB" %}</a>{% if user.is_staff %} <em>{% trans "version" %} {{ VERSION }}</em>{% endif %}</li>
+            <!--li><a href="{% url "developer" %}">{% trans "Developers" %}</a> | <a href="{% url "about" %}">{% trans "About" %}</a><li-->
           </ul>
           <label class="hidden">{% trans "Language" %}</label>
           {% if csrf_token != "NOTPROVIDED" %}
@@ -740,7 +740,6 @@
         $("#confirmMsgBoxModalOK").find('.modal-body').text('{% trans "Message. Do you want to proceed?" %}');
         $("#confirmMsgBoxModalOK_control_field").val('your_control_value');
         $("#confirmMsgBoxModalOK").modal("show");
-
         $('#confirmMsgBoxModalOK').find('.modal-footer #confirm').on('click', function() {
           if ($("#control_field").val() == 'your_control_value') {
             CONFIRMED
