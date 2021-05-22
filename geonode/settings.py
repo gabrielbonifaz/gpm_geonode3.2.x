@@ -522,7 +522,7 @@ INSTALLED_APPS = (
     'geonode',
     
     # CAS
-    #'django_cas_ng',
+    'django_cas_ng',
 )
 
 INSTALLED_APPS += ('markdownify',)
@@ -754,7 +754,7 @@ MIDDLEWARE = (
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    #'django_cas_ng.middleware.CASMiddleware', #cas
+    'django_cas_ng.middleware.CASMiddleware', #cas
 
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
@@ -790,7 +790,7 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = ast.literal_eval(os.environ.get('SECURE_HSTS_IN
 AUTHENTICATION_BACKENDS = (
     # 'oauth2_provider.backends.OAuth2Backend',
     'django.contrib.auth.backends.ModelBackend',
-    #'django_cas_ng.backends.CASBackend', # cas
+    'django_cas_ng.backends.CASBackend', # cas
     'guardian.backends.ObjectPermissionBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 )
