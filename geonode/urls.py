@@ -47,7 +47,7 @@ from oauth2_provider.urls import (
     app_name as oauth2_app_name,
     base_urlpatterns,
     oidc_urlpatterns)
-#import django_cas_ng.views
+import django_cas_ng.views
 
 admin.autodiscover()
 
@@ -160,9 +160,9 @@ urlpatterns += [
         name='moderator_contacted'),
     
     # CAS
-   # url('cas/login', django_cas_ng.views.LoginView.as_view(), name='cas_ng_login'),
-   # url('cas/logout', django_cas_ng.views.LogoutView.as_view(), name='cas_ng_logout'),
-   # url('cas/callback', django_cas_ng.views.CallbackView.as_view(), name='cas_ng_proxy_callback'),
+    url('cas/login', django_cas_ng.views.LoginView.as_view(), name='cas_ng_login'),
+    url('cas/logout', django_cas_ng.views.LogoutView.as_view(), name='cas_ng_logout'),
+    url('cas/callback', django_cas_ng.views.CallbackView.as_view(), name='cas_ng_proxy_callback'),
     
     # OAuth2/OIDC Provider
     url(r'^o/',
