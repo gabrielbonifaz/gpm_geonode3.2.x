@@ -924,7 +924,7 @@ THEME_ACCOUNT_CONTACT_EMAIL = os.getenv(
 # GeoNode specific settings
 #
 # CAS
-#CAS_SERVER_URL = 'https://186.46.236.6:8443/cas/login'
+#CAS_SERVER_URL = ''
 #CAS_VERIFY_SSL_CERTIFICATE = False
 #CAS_VERSION = 'CAS_2_SAML_1_0'
 
