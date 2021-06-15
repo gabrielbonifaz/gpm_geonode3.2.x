@@ -41,8 +41,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GeoNode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-03 14:51+0000\n"
-"PO-Revision-Date: 2021-05-20 17:10-0500\n"
+"POT-Creation-Date: 2021-06-14 22:19+0000\n"
+"PO-Revision-Date: 2021-06-14 17:33-0500\n"
 "Last-Translator: Julien Collaer <julien.collaer@opengeode.be>\n"
 "Language-Team: Spanish (http://www.transifex.com/geonode/geonode/language/"
 "es/)\n"
@@ -51,7 +51,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.4.3\n"
+"X-Generator: Poedit 3.0\n"
 
 msgid "Request to download a resource"
 msgstr "Solicitud para descargar un recurso"
@@ -652,6 +652,30 @@ msgstr "Descripción"
 msgid "GeoNode Client Library"
 msgstr "Biblioteca de cliente GeoNode"
 
+msgid "Explore Maps"
+msgstr "Explora Mapas"
+
+msgid "Edit Map"
+msgstr "Editar Mapa"
+
+msgid "Update"
+msgstr "Actualizar"
+
+msgid "Create a New Map"
+msgstr "Crear Mapa"
+
+msgid "Available layers"
+msgstr "Capas disponibles"
+
+msgid "Save"
+msgstr "Guardar"
+
+msgid "Save Map"
+msgstr "Guardar Mapa"
+
+msgid "Close"
+msgstr "Cerrar"
+
 msgid ""
 "Flora and/or fauna in natural environment. Examples: wildlife, vegetation, "
 "biological sciences, ecology, wilderness, sealife, wetlands, habitat."
@@ -1043,9 +1067,6 @@ msgstr "Remplazar"
 msgid "Remove"
 msgstr "Remover"
 
-msgid "Close"
-msgstr "Cerrar"
-
 msgid "Download Metadata"
 msgstr "Descargar metadatos"
 
@@ -1110,9 +1131,6 @@ msgstr "Proveedor de metadatos"
 
 msgid "<< Back"
 msgstr "<< Previo"
-
-msgid "Update"
-msgstr "Actualizar"
 
 msgid "Next >>"
 msgstr "Siguiente >>"
@@ -1384,6 +1402,9 @@ msgstr "Descargar"
 #, python-format
 msgid "%(GEONODE_APPS_NAME)s"
 msgstr "%(GEONODE_APPS_NAME)s"
+
+msgid "View GeoStory"
+msgstr "Ver GeoStory"
 
 msgid "Create New"
 msgstr "Crear Mapa"
@@ -1793,9 +1814,6 @@ msgstr "Create Group Category"
 
 msgid "Edit Group Category"
 msgstr "Editar categoría de grupo"
-
-msgid "Save"
-msgstr "Guardar"
 
 #, python-brace-format
 msgid "The e-mail address '{email}' has already been invited."
@@ -3302,9 +3320,6 @@ msgstr "Copiar este Mapa"
 msgid "Duplicate this map and modify it for your own purposes"
 msgstr "Duplica este Mapa y modifica para sus propios fines"
 
-msgid "Create a New Map"
-msgstr "Crear Mapa"
-
 msgid ""
 "\n"
 "      Here you can download all the layers of this map that\n"
@@ -3365,12 +3380,6 @@ msgstr "Descarga Completa"
 
 msgid "Download Failed"
 msgstr "Descarga Fallida"
-
-msgid "Edit Map"
-msgstr "Editar Mapa"
-
-msgid "Explore Maps"
-msgstr "Explora Mapas"
 
 msgid ""
 "Note: this map's orginal metadata was populated by importing a metadata XML "
@@ -5089,6 +5098,9 @@ msgstr "Contáctenos"
 msgid "Tel"
 msgstr "Tel"
 
+msgid "e-GOB"
+msgstr ""
+
 msgid "Uploading..."
 msgstr "Subiendo..."
 
@@ -5556,11 +5568,8 @@ msgstr "Bienvenido!"
 msgid "Get Started &raquo;"
 msgstr "Primeros Pasos &raquo;"
 
-msgid "Search for Data."
-msgstr "Buscar datos."
-
-msgid "Advanced Search"
-msgstr "Búsqueda Avanzada"
+msgid "Featured Datasets"
+msgstr "Conjunto de Datos"
 
 msgid ""
 "Click to search for geospatial data published by other users, organizations "
@@ -5613,8 +5622,11 @@ msgstr ""
 msgid "See users"
 msgstr "Ver usuarios"
 
-msgid "Featured Datasets"
-msgstr "Conjunto de Datos"
+msgid "Search for Data."
+msgstr "Buscar datos."
+
+msgid "Advanced Search"
+msgstr "Búsqueda Avanzada"
 
 msgid "Accept"
 msgstr "Aceptar"
@@ -6426,12 +6438,6 @@ msgstr "Permiso Denegado"
 
 #~ msgid "Delete, and don't ask me again."
 #~ msgstr "Eliminar y no volverme a preguntar."
-
-#~ msgid "Available layers"
-#~ msgstr "Capas disponibles"
-
-#~ msgid "Save Map"
-#~ msgstr "Guardar Mapa"
 
 #~ msgid "Unable to delete layer"
 #~ msgstr "No se puede eliminar la capa"
